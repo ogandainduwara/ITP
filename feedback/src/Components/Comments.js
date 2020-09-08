@@ -1,6 +1,18 @@
 import React, {Component} from 'react';
+import axios from 'axios';
+
 
 class Comments extends Component {
+    componentDidMount() {
+        axios.get(`http://localhost:5000/feedback`)
+            .then(response => {
+                console.log(response);
+            })
+            .catch(function (error) {
+                console.log(error);
+            })
+    }
+
     render() {
         return (
             <div className="w-50 mx-auto">
